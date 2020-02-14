@@ -1,9 +1,5 @@
 pipelines:
-  - name: pipeline_hello_world
-    configuration:
-      environmentVariables:
-        readOnly:
-          MY_MESSAGE: '"Hello World!"'
+  - name: xray
     steps:
       - name: scan
         type: XrayScan
