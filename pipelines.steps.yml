@@ -5,23 +5,14 @@ pipelines:
         readOnly:
           MY_MESSAGE: '"Hello World!"'
     steps:
-      - name: step_1
-        type: Bash
-        configuration:
-          inputResources:
-            - name: myAppRepo
-        execution:
-          onExecute:
-            - echo $MY_MESSAGE
-            - echo “running CI for master”
             
       - name: scan
         type: XrayScan
         configuration:
           #inherits from bash
           waitUntilFinish:        true  # default true
-          inputSteps:
-              - name:          step_1          # required
+          inputResources:
+              - name:          myAppRepo          # required
                 trigger: false
  
         execution:
