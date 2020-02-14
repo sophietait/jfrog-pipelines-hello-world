@@ -20,6 +20,9 @@ pipelines:
         configuration:
           #inherits from bash
           waitUntilFinish:        true  # default true
+            inputSteps:
+              - name:          step_1          # required
+                trigger: false
  
         execution:
           onStart:
