@@ -15,7 +15,7 @@ pipelines:
             - echo $MY_MESSAGE
             - echo “running CI for master”
             
-       - name: scan
+      - name: scan
         type: XrayScan
         configuration:
           #inherits from bash
