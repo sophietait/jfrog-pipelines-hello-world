@@ -21,10 +21,6 @@ pipelines:
           #inherits from bash
           waitUntilFinish:        true  # default true
  
-          inputResources:
-            - name:         myAppRepo           # required
-              trigger: false
- 
         execution:
           onStart:
             - echo "Preparing for work..."
