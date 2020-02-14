@@ -5,19 +5,21 @@ pipelines:
         readOnly:
           MY_MESSAGE: '"Hello World!"'
     steps:
-            
       - name: scan
         type: XrayScan
         configuration:
           #inherits from bash
-          waitUntilFinish:        true  # default true
+          waitUntilFinish:         true  # default true
+ 
           inputResources:
-              - name:          myAppRepo          # required
-                trigger: false
+            - name:         myAppRepo           # required
+              trigger: false
  
         execution:
           onStart:
             - echo "Preparing for work..."
+          onStart:
+            - echo "Prepping build environment"
           onSuccess:
             - echo "Job well done!"
           onFailure:
