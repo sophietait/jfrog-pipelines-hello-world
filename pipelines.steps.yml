@@ -8,7 +8,7 @@ pipelines:
           waitUntilFinish:         true  # default true
  
           inputResources:
-            - name:         myAppRepo           # required
+            - name:         buildInfo           # required
               trigger: false
  
         execution:
